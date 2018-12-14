@@ -238,15 +238,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bdd4612c34f2f4b8b7020960406095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iniChance: 30
+  iniChance: 44
   birthLimit: 3
-  deathLimit: 3
+  deathLimit: 5
   numR: 6
-  tmpSize: {x: 120, y: 70, z: 0}
+  tmpSize: {x: 160, y: 90, z: 0}
   topMap: {fileID: 1545567520}
   botMap: {fileID: 873065536}
   topTile: {fileID: 11400000, guid: 58f5a58eae5b65d4780ee7e760d1ae5a, type: 2}
-  botTile: {fileID: 11400000, guid: a54d854dbc5e59144a57a855d90873ad, type: 2}
+  botTile: {fileID: 11400000, guid: 923b5e0caa9c5ea4691780425cfe01c3, type: 2}
 --- !u!4 &93185726
 Transform:
   m_ObjectHideFlags: 0

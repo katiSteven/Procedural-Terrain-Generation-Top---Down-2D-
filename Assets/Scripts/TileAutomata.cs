@@ -22,7 +22,7 @@ public class TileAutomata : MonoBehaviour {
     public Tilemap topMap;
     public Tilemap botMap;
     public TerrainTile topTile;
-    public AnimatedTile botTile;
+    public Tile botTile;
 
     int width;
     int height;
@@ -77,6 +77,7 @@ public class TileAutomata : MonoBehaviour {
         int[,] newMap = new int[width,height];
         int neighb;
         BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
+        //BoundsInt myB = new BoundsInt(-2, -2, 0, 2, 2, 1);
 
 
         for (int x = 0; x < width; x++)
@@ -99,22 +100,22 @@ public class TileAutomata : MonoBehaviour {
 
                 if (oldMap[x,y] == 1)
                 {
-                    if (neighb < deathLimit) newMap[x, y] = 0;
+                    if (neighb < deathLimit) newMap[x, y] = 1;
 
                         else
                         {
-                            newMap[x, y] = 1;
+                            newMap[x, y] = 0;
 
                         }
                 }
 
                 if (oldMap[x,y] == 0)
                 {
-                    if (neighb > birthLimit) newMap[x, y] = 1;
+                    if (neighb > birthLimit) newMap[x, y] = 0;
 
                 else
                 {
-                    newMap[x, y] = 0;
+                    newMap[x, y] = 1;
                 }
                 }
 
