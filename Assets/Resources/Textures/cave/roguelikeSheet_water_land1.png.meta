@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: a843783f60ff85f49beac7b6e6067afe
+guid: db943896113c01c409ef2fae6d66bdc5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cave0_0
-    21300002: cave0_1
-    21300004: cave0_2
-    21300006: cave0_3
-    21300008: cave0_4
-    21300010: cave0_5
-    21300012: cave0_6
-    21300014: cave0_7
+    21300000: roguelikeSheet_water_land1_0
+    21300002: roguelikeSheet_water_land1_1
+    21300004: roguelikeSheet_water_land1_2
+    21300006: roguelikeSheet_water_land1_3
+    21300008: roguelikeSheet_water_land1_4
+    21300010: roguelikeSheet_water_land1_5
+    21300012: roguelikeSheet_water_land1_6
+    21300014: roguelikeSheet_water_land1_7
+    21300016: roguelikeSheet_water_land1_8
+    21300018: roguelikeSheet_water_land1_9
+    21300020: roguelikeSheet_water_land1_10
+    21300022: roguelikeSheet_water_land1_11
+    21300024: roguelikeSheet_water_land1_12
+    21300026: roguelikeSheet_water_land1_13
+    21300028: roguelikeSheet_water_land1_14
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -103,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave0_0
+      name: roguelikeSheet_water_land1_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 4
+        x: 0
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -117,17 +124,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4e999c4fb933645b45cebb69bc3217
+      spriteID: 78dda93587076ad42a3ebbcd6081befd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_1
+      name: roguelikeSheet_water_land1_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 20
+        x: 17
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -137,17 +144,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2458a94571bd4994e80466abfe3bd1a3
+      spriteID: e4467db2069c30f4c809fdb34afb2af5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_2
+      name: roguelikeSheet_water_land1_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 20
+        x: 34
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -157,17 +164,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc444569c14d0ab4790bc19e79310cc2
+      spriteID: 00ee67521faa9ce4291b7476c3cde104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_3
+      name: roguelikeSheet_water_land1_3
       rect:
         serializedVersion: 2
-        x: 23
-        y: 4
+        x: 51
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -177,17 +184,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec42de6c7256043418bd14f03baa71ad
+      spriteID: a1877a6467cb37c42a468dcedb180e3f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_4
+      name: roguelikeSheet_water_land1_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
+        x: 68
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -197,17 +204,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e093ed3fb51da54a852fd3055c7ac99
+      spriteID: 47a39c064d31b1846887a33542c16ca8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_5
+      name: roguelikeSheet_water_land1_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 0
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -217,17 +224,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf9aab82ba617a4408a83f457b69cbac
+      spriteID: 18c85300ff0be5e42ab66dcd7f7f11c8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_6
+      name: roguelikeSheet_water_land1_6
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
+        x: 17
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -237,17 +244,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8026d19e3b65e06489dd0520c30a170e
+      spriteID: d05d9220170f86c418a7a0cd08fc8492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave0_7
+      name: roguelikeSheet_water_land1_7
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
+        x: 34
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -257,7 +264,147 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f878b41ca2f92cd4095d5fec7da9cebe
+      spriteID: 822f559b9b3e1214ea1ddfb1fedc39ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01acb5043e3c42d479af255552cecc05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa927fcc71ab38b48b5b968127eb7c24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f8e7af7c1627f44bd84cf608054ecb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_11
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b2645a8d01c3a4c90753ad46f45ffa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a0650c438eeb9448a030156b470692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9915ab0f8114f1c4bb572d419bfa513b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeSheet_water_land1_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dfd5ccff5d76b4fb2fd28570851504
       vertices: []
       indices: 
       edges: []
@@ -265,7 +412,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6f47803b867fecc489226dfc18a6da59
+    spriteID: d11392507717bc44c80378e197b72fc4
     vertices: []
     indices: 
     edges: []

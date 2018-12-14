@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae22fa4f4b03f2b46bab2a09d4c743fd, type: 3}
   m_Name: CaveTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300006, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -36,41 +36,5 @@ MonoBehaviour:
   spriteSlots:
   - sprites:
     - sprite: {fileID: 21300000, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300002, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300004, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300006, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300008, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300010, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300012, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300014, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300016, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300018, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300020, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300022, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
-      probability: 1
-  - sprites:
-    - sprite: {fileID: 21300024, guid: a843783f60ff85f49beac7b6e6067afe, type: 3}
       probability: 1
   preview: {fileID: 0}
