@@ -22,9 +22,13 @@ public class TileAutomata : MonoBehaviour {
     public Tilemap topMap;
     public Tilemap botMap;
     public TerrainTile topTile;
+<<<<<<< HEAD
     public Tile grassTile;
     public Tile botTile;
     //public AnimatedTile botTile;
+=======
+    public AnimatedTile botTile;
+>>>>>>> parent of 20f2d09... minor changes in island generation
 
     int width;
     int height;
@@ -35,10 +39,11 @@ public class TileAutomata : MonoBehaviour {
         width = tmpSize.x;
         height = tmpSize.y;
 
-        if (terrainMap==null) {
+        if (terrainMap==null)
+            {
             terrainMap = new int[width, height];
             InitPos();
-        }
+            }
 
 
         for (int i = 0; i < nu; i++)
@@ -52,9 +57,13 @@ public class TileAutomata : MonoBehaviour {
             {
                 if (terrainMap[x, y] == 1) {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile);
+<<<<<<< HEAD
                 }
                 
                 botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0),  botTile);
+=======
+                botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
+>>>>>>> parent of 20f2d09... minor changes in island generation
                     
 
             }
@@ -73,6 +82,7 @@ public class TileAutomata : MonoBehaviour {
         }
 
     }
+
 
     public int[,] GenTilePos(int[,] oldMap)
     {
@@ -101,22 +111,22 @@ public class TileAutomata : MonoBehaviour {
 
                 if (oldMap[x,y] == 1)
                 {
-                    if (neighb < deathLimit) newMap[x, y] = 1;
+                    if (neighb < deathLimit) newMap[x, y] = 0;
 
                         else
                         {
-                            newMap[x, y] = 0;
+                            newMap[x, y] = 1;
 
                         }
                 }
 
                 if (oldMap[x,y] == 0)
                 {
-                    if (neighb > birthLimit) newMap[x, y] = 0;
+                    if (neighb > birthLimit) newMap[x, y] = 1;
 
                 else
                 {
-                    newMap[x, y] = 1;
+                    newMap[x, y] = 0;
                 }
                 }
 
@@ -129,11 +139,15 @@ public class TileAutomata : MonoBehaviour {
         return newMap;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 20f2d09... minor changes in island generation
 	void Update () {
 
         if (Input.GetMouseButtonDown(0))
             {
-            DoSim(numR);    // generates map & increase land
+            DoSim(numR);
             }
 
 
@@ -149,7 +163,16 @@ public class TileAutomata : MonoBehaviour {
             SaveAssetMap();
             count++;
         }
-    }
+
+
+
+
+
+
+
+
+        }
+
 
     public void SaveAssetMap()
     {
