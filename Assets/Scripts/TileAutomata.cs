@@ -2,16 +2,19 @@
 using UnityEngine.Tilemaps;
 using UnityEditor;
 
-public class TileAutomata : MonoBehaviour {
+public class TileAutomata : MonoBehaviour
+{
 
 
-    [Range(0,100)]
+    public int refineValue;
+
+    [Range(0, 100)]
     public int iniChance;
-    [Range(1,8)]
+    [Range(1, 8)]
     public int birthLimit;
-    [Range(1,8)]
+    [Range(1, 8)]
     public int deathLimit;
-    [Range(1,10)]
+    [Range(1, 10)]
     public int numR;
     private int count = 0;
 
@@ -31,11 +34,11 @@ public class TileAutomata : MonoBehaviour {
         width = tmpSize.x;
         height = tmpSize.y;
 
-        if (terrainMap==null)
-            {
+        if (terrainMap == null)
+        {
             terrainMap = new int[width, height];
             InitPos();
-            }
+        }
 
 
         for (int i = 0; i < nu; i++)
@@ -50,7 +53,7 @@ public class TileAutomata : MonoBehaviour {
                 if (terrainMap[x, y] == 1)
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile);
                 botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
-                    
+
 
             }
         }
@@ -72,7 +75,7 @@ public class TileAutomata : MonoBehaviour {
 
     public int[,] GenTilePos(int[,] oldMap)
     {
-        int[,] newMap = new int[width,height];
+        int[,] newMap = new int[width, height];
         int neighb;
         BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
         //BoundsInt myB = new BoundsInt(-2, -2, 0, 2, 2, 1);
@@ -86,7 +89,7 @@ public class TileAutomata : MonoBehaviour {
                 foreach (var b in myB.allPositionsWithin)
                 {
                     if (b.x == 0 && b.y == 0) continue;
-                    if (x+b.x >= 0 && x+b.x < width && y+b.y >= 0 && y+b.y < height)
+                    if (x + b.x >= 0 && x + b.x < width && y + b.y >= 0 && y + b.y < height)
                     {
                         neighb += oldMap[x + b.x, y + b.y];
                     }
@@ -96,25 +99,25 @@ public class TileAutomata : MonoBehaviour {
                     }
                 }
 
-                if (oldMap[x,y] == 1)
+                if (oldMap[x, y] == 1)
                 {
                     if (neighb < deathLimit) newMap[x, y] = 1;
 
-                        else
-                        {
-                            newMap[x, y] = 0;
+                    else
+                    {
+                        newMap[x, y] = 0;
 
-                        }
+                    }
                 }
 
-                if (oldMap[x,y] == 0)
+                if (oldMap[x, y] == 0)
                 {
                     if (neighb > birthLimit) newMap[x, y] = 0;
 
-                else
-                {
-                    newMap[x, y] = 1;
-                }
+                    else
+                    {
+                        newMap[x, y] = 1;
+                    }
                 }
 
             }
@@ -126,22 +129,31 @@ public class TileAutomata : MonoBehaviour {
         return newMap;
     }
 
-    void Start()
+    private void Start()
     {
-        
+        for (int x = 0; x < refineValue; x++)
+        {
+            DoSim(numR);
+        }
     }
-    void Update () {
+
+    // runs evey frame
+    void Update()
+    {
 
         if (Input.GetMouseButtonDown(0))
+        {
+            for (int x = 0; x < refineValue; x++)
             {
-            DoSim(numR);
+                DoSim(numR);
             }
+        }
 
 
         if (Input.GetMouseButtonDown(1))
-            {
+        {
             ClearMap(true);
-            }
+        }
 
 
 
@@ -158,7 +170,7 @@ public class TileAutomata : MonoBehaviour {
 
 
 
-        }
+    }
 
 
     public void SaveAssetMap()
@@ -169,7 +181,7 @@ public class TileAutomata : MonoBehaviour {
         if (mf)
         {
             var savePath = "Assets/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath,mf))
+            if (PrefabUtility.CreatePrefab(savePath, mf))
             {
                 EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
             }
