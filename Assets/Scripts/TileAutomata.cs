@@ -2,9 +2,7 @@
 using UnityEngine.Tilemaps;
 using UnityEditor;
 
-public class TileAutomata : MonoBehaviour
-{
-
+public class TileAutomata : MonoBehaviour {
 
     public int refineValue;
 
