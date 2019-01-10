@@ -26,6 +26,25 @@ public class TileAutomata : MonoBehaviour {
     int width;
     int height;
 
+    private PlayerSpawner playerSpawner;
+
+    private void Awake()
+    {
+        width = tmpSize.x;
+        height = tmpSize.y;
+        //say what
+    }
+
+    private void Start()
+    {
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
+
+        for (int x = 0; x < refineValue; x++)
+        {
+            DoSim(numR);
+        }
+    }
+
     public void DoSim(int nu)
     {
         ClearMap(false);
@@ -36,6 +55,7 @@ public class TileAutomata : MonoBehaviour {
         {
             terrainMap = new int[width, height];
             InitPos();
+            
         }
 
 
@@ -51,10 +71,23 @@ public class TileAutomata : MonoBehaviour {
                 if (terrainMap[x, y] == 1)
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile);
                 botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
-
-
             }
         }
+    }
+
+    public Vector2Int GetSpawnPoint() {
+        int value = 0, spawnWidth, spawnHeight;
+        while (value != 1) {
+            spawnWidth = UnityEngine.Random.Range(0, width);
+            spawnHeight = UnityEngine.Random.Range(0, height);
+            Debug.Log(spawnWidth + "  " + spawnHeight);
+            value = terrainMap[spawnWidth, spawnHeight];
+            if (value == 1) {
+                return new Vector2Int(-spawnWidth + width / 2, -spawnHeight + height / 2);
+            }
+        }
+        Debug.Log("No Land Found");
+        return new Vector2Int(0,0);
     }
 
     public void InitPos()
@@ -63,11 +96,10 @@ public class TileAutomata : MonoBehaviour {
         {
             for (int y = 0; y < height; y++)
             {
-                terrainMap[x, y] = Random.Range(1, 101) < iniChance ? 1 : 0;
+                terrainMap[x, y] = UnityEngine.Random.Range(1, 101) < iniChance ? 1 : 0;
             }
-
         }
-
+        playerSpawner.SpawnPlayer();
     }
 
 
@@ -127,14 +159,6 @@ public class TileAutomata : MonoBehaviour {
         return newMap;
     }
 
-    private void Start()
-    {
-        for (int x = 0; x < refineValue; x++)
-        {
-            DoSim(numR);
-        }
-    }
-
     // runs evey frame
     void Update()
     {
@@ -144,6 +168,7 @@ public class TileAutomata : MonoBehaviour {
             for (int x = 0; x < refineValue; x++)
             {
                 DoSim(numR);
+                
             }
         }
 
@@ -206,5 +231,9 @@ public class TileAutomata : MonoBehaviour {
 
 
     }
+
+    //public int[,] GetTerrainMap() {
+    //    return terrainMap;
+    //}
 
 }
