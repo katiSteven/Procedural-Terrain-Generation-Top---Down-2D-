@@ -4,6 +4,7 @@ using UnityEditor;
 
 public class TileAutomata : MonoBehaviour {
 
+    public GameObject player;
     public int refineValue;
 
     [Range(0, 100)]
@@ -73,6 +74,8 @@ public class TileAutomata : MonoBehaviour {
                 botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
             }
         }
+
+        GeneratePlayer();
     }
 
     public Vector2Int GetSpawnPoint() {
@@ -99,7 +102,7 @@ public class TileAutomata : MonoBehaviour {
                 terrainMap[x, y] = UnityEngine.Random.Range(1, 101) < iniChance ? 1 : 0;
             }
         }
-        playerSpawner.SpawnPlayer();
+        //playerSpawner.SpawnPlayer();
     }
 
 
@@ -232,8 +235,11 @@ public class TileAutomata : MonoBehaviour {
 
     }
 
-    //public int[,] GetTerrainMap() {
-    //    return terrainMap;
-    //}
+    public void GeneratePlayer()
+    {
+        Vector2Int spawnValue = GetSpawnPoint();
+        Debug.Log("spawning player");
+        Instantiate(player, new Vector3Int(spawnValue.x, spawnValue.y, 0), Quaternion.identity);
+    }
 
 }
