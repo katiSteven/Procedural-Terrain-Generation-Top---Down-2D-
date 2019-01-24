@@ -47,6 +47,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3902810653
     locked: 0
+  - name: Trees
+    uniqueID: 1005525907
+    locked: 0
   - name: PlayerTop
     uniqueID: 1282269835
     locked: 0

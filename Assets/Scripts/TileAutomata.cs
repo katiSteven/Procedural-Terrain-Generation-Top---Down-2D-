@@ -27,23 +27,53 @@ public class TileAutomata : MonoBehaviour {
     int width;
     int height;
 
-    private PlayerSpawner playerSpawner;
+    private ObjectPlacer objectPlacer;
 
     private void Awake()
     {
         width = tmpSize.x;
         height = tmpSize.y;
-        //say what
     }
 
     private void Start()
     {
-        playerSpawner = FindObjectOfType<PlayerSpawner>();
+        objectPlacer = FindObjectOfType<ObjectPlacer>();
 
         for (int x = 0; x < refineValue; x++)
         {
             DoSim(numR);
         }
+    }
+
+    //for terrain -- for terrain -- for terrain -- for terrain -- for terrain -- for terrain -- 
+
+    // runs evey frame
+    void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            for (int x = 0; x < refineValue; x++)
+            {
+                DoSim(numR);
+
+            }
+        }
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            ClearMap(true);
+        }
+
+
+
+        if (Input.GetMouseButton(2))
+        {
+            SaveAssetMap();
+            count++;
+        }
+
     }
 
     public void DoSim(int nu)
@@ -56,9 +86,8 @@ public class TileAutomata : MonoBehaviour {
         {
             terrainMap = new int[width, height];
             InitPos();
-            
+            objectPlacer.GenerateObjects();
         }
-
 
         for (int i = 0; i < nu; i++)
         {
@@ -78,21 +107,6 @@ public class TileAutomata : MonoBehaviour {
         GeneratePlayer();
     }
 
-    public Vector2Int GetSpawnPoint() {
-        int value = 0, spawnWidth, spawnHeight;
-        while (value != 1) {
-            spawnWidth = UnityEngine.Random.Range(0, width);
-            spawnHeight = UnityEngine.Random.Range(0, height);
-            Debug.Log(spawnWidth + "  " + spawnHeight);
-            value = terrainMap[spawnWidth, spawnHeight];
-            if (value == 1) {
-                return new Vector2Int(-spawnWidth + width / 2, -spawnHeight + height / 2);
-            }
-        }
-        Debug.Log("No Land Found");
-        return new Vector2Int(0,0);
-    }
-
     public void InitPos()
     {
         for (int x = 0; x < width; x++)
@@ -103,8 +117,8 @@ public class TileAutomata : MonoBehaviour {
             }
         }
         //playerSpawner.SpawnPlayer();
-    }
 
+    }
 
     public int[,] GenTilePos(int[,] oldMap)
     {
@@ -157,47 +171,8 @@ public class TileAutomata : MonoBehaviour {
 
         }
 
-
-
         return newMap;
     }
-
-    // runs evey frame
-    void Update()
-    {
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            for (int x = 0; x < refineValue; x++)
-            {
-                DoSim(numR);
-                
-            }
-        }
-
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            ClearMap(true);
-        }
-
-
-
-        if (Input.GetMouseButton(2))
-        {
-            SaveAssetMap();
-            count++;
-        }
-
-
-
-
-
-
-
-
-    }
-
 
     public void SaveAssetMap()
     {
@@ -235,11 +210,33 @@ public class TileAutomata : MonoBehaviour {
 
     }
 
+    //for player -- for player -- for player -- for player -- for player -- for player -- 
+
+    //for player
     public void GeneratePlayer()
     {
         Vector2Int spawnValue = GetSpawnPoint();
-        Debug.Log("spawning player");
         Instantiate(player, new Vector3Int(spawnValue.x, spawnValue.y, 0), Quaternion.identity);
     }
+
+    // for player
+    public Vector2Int GetSpawnPoint()
+    {
+        int value = 0, spawnWidth, spawnHeight;
+        while (value != 1)
+        {
+            spawnWidth = UnityEngine.Random.Range(0, width);
+            spawnHeight = UnityEngine.Random.Range(0, height);
+            value = terrainMap[spawnWidth, spawnHeight];
+            if (value == 1)
+            {
+                return new Vector2Int(-spawnWidth + width / 2, -spawnHeight + height / 2);
+            }
+        }
+        Debug.LogWarning("No Land Found");
+        return new Vector2Int(0, 0);
+    }
+
+    public int[,] GetTerrainMap() { return terrainMap; }
 
 }
